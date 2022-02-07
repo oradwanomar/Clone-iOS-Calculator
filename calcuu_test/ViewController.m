@@ -37,8 +37,8 @@
     x=0;
     y=0;
 }
-    
-
+NSString*totalResult;
+NSString *str;
 - (IBAction)Btn:(id)sender {
     _btnColor.backgroundColor=[UIColor redColor];
     _btnColor3.backgroundColor=[UIColor redColor];
@@ -49,189 +49,26 @@
     NSString*resultMul=[@(num1*num2)stringValue];
     NSString*resultDiv=[@(num1/num2)stringValue];
     NSString*resultPrecentage=[@(num1/100)stringValue];
-    NSString*totalResult;
-
     
     switch ([sender tag]) {
         case 10:
-            if (i>1) {
-                if ([operator isEqual:@"+"]) {
-                    totalResult=resultAdd;
-                    [_label setText:totalResult];
-                    CGFloat ntg=[totalResult doubleValue];
-                    num1=(float)ntg;
-                }else if ([operator isEqual:@"*"]){
-                    totalResult=resultMul;
-                    [_label setText:totalResult];
-                    CGFloat ntg=[totalResult doubleValue];
-                    num1=(float)ntg;
-                }else if ([operator isEqual:@"/"]){
-                    totalResult=resultDiv;
-                    [_label setText:totalResult];
-                    CGFloat ntg=[totalResult doubleValue];
-                    num1=(float)ntg;
-                }else if ([operator isEqual:@"-"]){
-                    totalResult=resultSub;
-                    [_label setText:totalResult];
-                    CGFloat ntg=[totalResult doubleValue];
-                    num1=(float)ntg;
-                }else if ([operator isEqual:@"%"]){
-                    totalResult=resultPrecentage;
-                    [_label setText:totalResult];
-                    CGFloat ntg=[totalResult doubleValue];
-                    num1=(float)ntg;
-                }
-            }
-            operator=@"/";
-            i=1;
-            i++;
-            vVal=@"";
-            x=0;
-            y=0;
+            [self opertation:resultAdd :resultMul :resultDiv :resultSub :resultPrecentage :@"/"];
             break;
         case 11:
-            if (i>1) {
-                if ([operator isEqual:@"+"]) {
-                    totalResult=resultAdd;
-                    [_label setText:totalResult];
-                    CGFloat ntg=[totalResult doubleValue];
-                    num1=(float)ntg;
-                }else if ([operator isEqual:@"*"]){
-                    totalResult=resultMul;
-                    [_label setText:totalResult];
-                    CGFloat ntg=[totalResult doubleValue];
-                    num1=(float)ntg;
-                }else if ([operator isEqual:@"/"]){
-                    totalResult=resultDiv;
-                    [_label setText:totalResult];
-                    CGFloat ntg=[totalResult doubleValue];
-                    num1=(float)ntg;
-                }else if ([operator isEqual:@"-"]){
-                    totalResult=resultSub;
-                    [_label setText:totalResult];
-                    CGFloat ntg=[totalResult doubleValue];
-                    num1=(float)ntg;
-                }else if ([operator isEqual:@"%"]){
-                    totalResult=resultPrecentage;
-                    [_label setText:totalResult];
-                    CGFloat ntg=[totalResult doubleValue];
-                    num1=(float)ntg;
-                }
-            }
-            operator=@"*";
-            i=1;
-            i++;
-            vVal=@"";
-            x=0;
-            y=0;
+            [self opertation:resultAdd :resultMul :resultDiv :resultSub :resultPrecentage :@"*"];
+
             break;
         case 12:
-            if (i>1) {
-                if ([operator isEqual:@"+"]) {
-                    totalResult=resultAdd;
-                    [_label setText:totalResult];
-                    CGFloat ntg=[totalResult doubleValue];
-                    num1=(float)ntg;
-                }else if ([operator isEqual:@"*"]){
-                    totalResult=resultMul;
-                    [_label setText:totalResult];
-                    CGFloat ntg=[totalResult doubleValue];
-                    num1=(float)ntg;
-                }else if ([operator isEqual:@"/"]){
-                    totalResult=resultDiv;
-                    [_label setText:totalResult];
-                    CGFloat ntg=[totalResult doubleValue];
-                    num1=(float)ntg;
-                }else if ([operator isEqual:@"-"]){
-                    totalResult=resultSub;
-                    [_label setText:totalResult];
-                    CGFloat ntg=[totalResult doubleValue];
-                    num1=(float)ntg;
-                }else if ([operator isEqual:@"%"]){
-                    totalResult=resultPrecentage;
-                    [_label setText:totalResult];
-                    CGFloat ntg=[totalResult doubleValue];
-                    num1=(float)ntg;
-                }
-            }
-            operator=@"-";
-            i=1;
-            i++;
-            vVal=@"";
-            x=0;
-            y=0;
+            [self opertation:resultAdd :resultMul :resultDiv :resultSub :resultPrecentage :@"-"];
             break;
         case 13:
-            if (i>1) {
-                if ([operator isEqual:@"+"]) {
-                    totalResult=resultAdd;
-                    [_label setText:totalResult];
-                    CGFloat ntg=[totalResult doubleValue];
-                    num1=(float)ntg;
-                }else if ([operator isEqual:@"*"]){
-                    totalResult=resultMul;
-                    [_label setText:totalResult];
-                    CGFloat ntg=[totalResult doubleValue];
-                    num1=(float)ntg;
-                }else if ([operator isEqual:@"/"]){
-                    totalResult=resultDiv;
-                    [_label setText:totalResult];
-                    CGFloat ntg=[totalResult doubleValue];
-                    num1=(float)ntg;
-                }else if ([operator isEqual:@"-"]){
-                    totalResult=resultSub;
-                    [_label setText:totalResult];
-                    CGFloat ntg=[totalResult doubleValue];
-                    num1=(float)ntg;
-                }else if ([operator isEqual:@"%"]){
-                    totalResult=resultPrecentage;
-                    [_label setText:totalResult];
-                    CGFloat ntg=[totalResult doubleValue];
-                    num1=(float)ntg;
-                }
-            }
-            operator=@"+";
-            i=1;
-            i++;
-            vVal=@"";
-            x=0;
-            y=0;
+            [self opertation:resultAdd :resultMul :resultDiv :resultSub :resultPrecentage :@"+"];
+
             break;
         case 16:
-            if (i>1) {
-                if ([operator isEqual:@"+"]) {
-                    totalResult=resultAdd;
-                    [_label setText:totalResult];
-                    CGFloat ntg=[totalResult doubleValue];
-                    num1=(float)ntg;
-                }else if ([operator isEqual:@"*"]){
-                    totalResult=resultMul;
-                    [_label setText:totalResult];
-                    CGFloat ntg=[totalResult doubleValue];
-                    num1=(float)ntg;
-                }else if ([operator isEqual:@"/"]){
-                    totalResult=resultDiv;
-                    [_label setText:totalResult];
-                    CGFloat ntg=[totalResult doubleValue];
-                    num1=(float)ntg;
-                }else if ([operator isEqual:@"-"]){
-                    totalResult=resultSub;
-                    [_label setText:totalResult];
-                    CGFloat ntg=[totalResult doubleValue];
-                    num1=(float)ntg;
-                }else if ([operator isEqual:@"%"]){
-                    totalResult=resultPrecentage;
-                    [_label setText:totalResult];
-                    CGFloat ntg=[totalResult doubleValue];
-                    num1=(float)ntg;
-                }
-            }
-            operator=@"%";
-            i=1;
-            i++;
-            vVal=@"";
-            x=0;
-            y=0;
+            [self opertation:resultAdd :resultMul :resultDiv :resultSub :resultPrecentage :@"%"];
+            _label.text=resultPrecentage;
+
             break;
         case 14:
             if ([operator isEqual:@"+"]) {
@@ -284,6 +121,10 @@
                         vVal=[@"-" stringByAppendingString:vVal];
                         _label.text=vVal;
                     }
+                if (str.length!=0) {
+                    str=[@"-" stringByAppendingString:str];
+                    _label.text=str;
+                }
             }
             y++;
             break;
@@ -313,12 +154,49 @@
             break;
             
     }
-    NSString *str=[_label text];
+    str=[_label text];
     CGFloat ntg=[str doubleValue];
     if (i==0) {
         num1=(float)ntg;
     }else
         num2=(float)ntg;
+}
+
+-(void)opertation:(NSString*)add :(NSString*)mul :(NSString*)div :(NSString*)sub :(NSString*)prctg :(NSString*)op{
+    if (i>1) {
+        if ([operator isEqual:@"+"]) {
+            totalResult=add;
+            [_label setText:totalResult];
+            CGFloat ntg=[totalResult doubleValue];
+            num1=(float)ntg;
+        }else if ([operator isEqual:@"*"]){
+            totalResult=mul;
+            [_label setText:totalResult];
+            CGFloat ntg=[totalResult doubleValue];
+            num1=(float)ntg;
+        }else if ([operator isEqual:@"/"]){
+            totalResult=div;
+            [_label setText:totalResult];
+            CGFloat ntg=[totalResult doubleValue];
+            num1=(float)ntg;
+        }else if ([operator isEqual:@"-"]){
+            totalResult=sub;
+            [_label setText:totalResult];
+            CGFloat ntg=[totalResult doubleValue];
+            num1=(float)ntg;
+        }else if ([operator isEqual:@"%"]){
+            totalResult=prctg;
+            [_label setText:totalResult];
+            CGFloat ntg=[totalResult doubleValue];
+            num1=(float)ntg;
+        }
+    }
+    operator=op;
+    i=1;
+    i++;
+    vVal=@"";
+    x=0;
+    y=0;
 }
 
 @end
