@@ -17,6 +17,7 @@
     NSString* vVal;
     int i;
     int x;
+    int y;
 }
 @property (weak, nonatomic) IBOutlet UILabel *label;
 @property (weak, nonatomic) IBOutlet UIButton *btnColor;
@@ -34,7 +35,10 @@
     vVal=_label.text;
     i=0;
     x=0;
+    y=0;
 }
+    
+
 - (IBAction)Btn:(id)sender {
     _btnColor.backgroundColor=[UIColor redColor];
     _btnColor3.backgroundColor=[UIColor redColor];
@@ -83,6 +87,7 @@
             i++;
             vVal=@"";
             x=0;
+            y=0;
             break;
         case 11:
             if (i>1) {
@@ -118,6 +123,7 @@
             i++;
             vVal=@"";
             x=0;
+            y=0;
             break;
         case 12:
             if (i>1) {
@@ -153,6 +159,7 @@
             i++;
             vVal=@"";
             x=0;
+            y=0;
             break;
         case 13:
             if (i>1) {
@@ -188,6 +195,7 @@
             i++;
             vVal=@"";
             x=0;
+            y=0;
             break;
         case 16:
             if (i>1) {
@@ -223,6 +231,7 @@
             i++;
             vVal=@"";
             x=0;
+            y=0;
             break;
         case 14:
             if ([operator isEqual:@"+"]) {
@@ -242,6 +251,7 @@
             }
             i=0;
             x=0;
+            y=0;
             vVal=@"";
             break;
         case 15:
@@ -265,14 +275,17 @@
             }
             break;
         case 18:
-            if (sVal.length!=0){
-                sVal=[@"-" stringByAppendingString:sVal];
-                _label.text=sVal;
-            }
-            if (vVal.length!=0){
-                    vVal=[@"-" stringByAppendingString:vVal];
-                    _label.text=vVal;
+            if (y==0){
+                if (sVal.length!=0){
+                    sVal=[@"-" stringByAppendingString:sVal];
+                    _label.text=sVal;
                 }
+                if (vVal.length!=0){
+                        vVal=[@"-" stringByAppendingString:vVal];
+                        _label.text=vVal;
+                    }
+            }
+            y++;
             break;
         case 0:
         case 1:
@@ -296,6 +309,7 @@
             {
             [_clear setTitle:@"C" forState:UIControlStateNormal];
             }
+            y=0;
             break;
             
     }
