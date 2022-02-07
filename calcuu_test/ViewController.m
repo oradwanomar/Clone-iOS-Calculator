@@ -266,10 +266,12 @@
             break;
         case 18:
             if (sVal.length!=0){
-                _label.text=[@"-" stringByAppendingString:sVal];
-            }else
-                if (vVal.length!=0){
-                    _label.text=[vVal stringByAppendingString:@"-"];
+                sVal=[@"-" stringByAppendingString:sVal];
+                _label.text=sVal;
+            }
+            if (vVal.length!=0){
+                    vVal=[@"-" stringByAppendingString:vVal];
+                    _label.text=vVal;
                 }
             break;
         case 0:
