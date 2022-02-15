@@ -10,6 +10,7 @@
 
 @interface ViewController ()
 {
+    
     float num1;
     float num2;
     NSString*operator;
@@ -18,6 +19,7 @@
     int i;
     int x;
     int y;
+    
 }
 @property (weak, nonatomic) IBOutlet UILabel *label;
 @property (weak, nonatomic) IBOutlet UIButton *btnColor;
